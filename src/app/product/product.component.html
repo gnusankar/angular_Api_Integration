@@ -1,9 +1,45 @@
-<!-- <p>product works!</p>
+<p>product works!</p>
 <div class="ad-banner-example">
     <h3>userDetails</h3>
     <ng-container *ngComponentOutlet="
-        currentComponet?.component;
-        inputs: currentComponet?.inputs;
+        currentComponet.component;
+        inputs: currentComponet.inputs;
     " />
     <button (click)="renderTheNextComponent()">Next</button>
-</div> -->
+</div>
+
+
+<div>
+product list
+ <div *ngIf="allProducts$ | async as data; else noData" style="border: 1px solid orange;" class="productLists">
+    <div *ngFor="let item of data.products" class="item">
+        
+        <div><img style="width: 120px; height: 120px;" [src]="item.thumbnail" /></div>
+        <div>
+           brand: {{item.brand}}
+        </div>
+        <p>price: {{item.price}}</p>
+        <button>add card</button>
+       
+    </div>
+ </div>
+
+ <ng-template #noData> no data availbe</ng-template>
+
+</div>
+
+
+
+<div>
+    Deferable view
+
+
+    <!-- @Deferable( on viewport(trigger)) {
+        <app-page-one></app-page-one>
+    } -->
+    <!-- @defer {
+        <large-component />
+    } @placeholder (minimum 500ms) {
+    <p>Placeholder content</p>
+    } -->
+</div>
