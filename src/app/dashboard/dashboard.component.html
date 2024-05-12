@@ -1,0 +1,16 @@
+
+<div style="width: 80%; height: 60%; margin: auto;" *ngIf="studentArray && studentArray.length > 0 ;else noValue"> 
+    <app-ag-grid
+    [rowData]="studentArray"
+    [columnDefs]="columnDefs"
+    [rowSelection]="rowSelection"
+    [class]="'ag-theme-quartz'"
+    [pagination]="true"
+    [paginationPageSize]="20"
+    [paginationPageSizeSelector]="[10,20,30]"
+    ></app-ag-grid>
+</div>
+
+<ng-template #noValue>
+    No Data available
+</ng-template>
