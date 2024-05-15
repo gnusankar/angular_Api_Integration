@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, effect } from '@angular/core';
+import { CommonService } from './common.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'agGridProject';
+
+  constructor() {
+  }
+
+  ngAfterViewInit() {
+  }
 
 }

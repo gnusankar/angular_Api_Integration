@@ -3,15 +3,18 @@ import { AsyncPipe, CommonModule, NgComponentOutlet } from '@angular/common';
 import { CommonService } from '../common.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PageOneComponent } from '../page-one/page-one.component';
+import { DeferTestComponent } from '../defer-test/defer-test.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports:[NgComponentOutlet, AsyncPipe, CommonModule],
+  imports:[NgComponentOutlet, AsyncPipe, CommonModule, PageOneComponent, DeferTestComponent],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  value: boolean = false
 
  componentList = inject(CommonService).getDynamicComponents();
 
@@ -22,7 +25,11 @@ constructor(private http: HttpClient) {
   
 }
 ngOnInit() {
-  this.allProducts$ = this.http.get("https://dummyjson.com/products");
+  this.allProducts$ = this.getAllProduct()
+}
+
+getAllProduct() {
+  return this.http.get("https://dummyjson.com/products");
 }
 
   get currentComponet() {

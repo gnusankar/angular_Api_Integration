@@ -5,6 +5,7 @@ import { CommonService } from '../common.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { inject } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
+import { of } from 'rxjs';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;

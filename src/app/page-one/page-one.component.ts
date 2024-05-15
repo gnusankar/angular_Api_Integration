@@ -10,4 +10,8 @@ export class PageOneComponent {
 
   @Input() name!: string;
   @Input() dob!: number;
+
+  // ngOnInit() {
+  //   console.log("-------------deferable view omponet")
+  // }
 }

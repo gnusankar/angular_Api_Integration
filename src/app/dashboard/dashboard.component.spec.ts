@@ -29,10 +29,9 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('should initialize properties', () => {
-    // expect(component.title).toEqual('agGridProject');
+  it('should initialize properties', () => {
     expect(component.studentArray).toEqual([]);
-    expect(component.dataSubscription).toBeFalsy();
+    expect(component.dataSubscription).toBeDefined();
     expect(component.columnDefs).toBeDefined();
     expect(component.rowSelection).toEqual('multiple');
   });
@@ -40,6 +39,8 @@ describe('DashboardComponent', () => {
   it('should subscribe to getStudentData on ngOnInit', () => {
     const studentData = [{ name: 'John', age: 25, gender: 'Male', gpa: 3.5 }];
     spyOn(commonService, 'getStudentData').and.returnValue(of(studentData));
+
+    // spyOn(commonService, 'getDynamicComponents').and.returnValue(of())
     component.ngOnInit();
     expect(commonService.getStudentData).toHaveBeenCalled();
     expect(component.studentArray).toEqual(studentData);

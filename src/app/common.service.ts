@@ -11,8 +11,6 @@ export class CommonService {
 
   http = inject(HttpClient)
 
-  constructor() { }
-  
 
   getStudentData() {
     return this.http.get(this.getUrl);

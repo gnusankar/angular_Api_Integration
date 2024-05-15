@@ -24,13 +24,18 @@ export class DashboardComponent {
     {
       field: "name",
       checkboxSelection: true,
-      editable: true
+      editable: true,
+      flex: 1
     },
-    { field: "age" },
-    { field: "gender", filter: "agNumberColumnFilter" },
+    { field: "age", flex: 1 },
+    { field: "gender", filter: "agNumberColumnFilter" ,  flex: 1},
+    {
+      field: "email", flex: 1
+    },
     {
       field: "gpa",
       cellClassRules: this.ragCellClassRules,
+      flex: 1
     },
   ];
 
