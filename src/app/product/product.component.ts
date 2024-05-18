@@ -25,8 +25,8 @@ constructor(private http: HttpClient) {
   
 }
 ngOnInit() {
-   this.getAllProduct().subscribe((data) => {
-    this.allProducts$ = data;
+   this.getAllProduct().subscribe((data: any) => {
+    this.allProducts$ = data.products;
   })
 }
 
