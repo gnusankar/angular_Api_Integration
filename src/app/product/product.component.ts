@@ -20,12 +20,14 @@ export class ProductComponent {
 
 currentComIndex: number = 0;
 
-allProducts$!: Observable<any>;
+allProducts$!: any;
 constructor(private http: HttpClient) {
   
 }
 ngOnInit() {
-  this.allProducts$ = this.getAllProduct()
+   this.getAllProduct().subscribe((data) => {
+    this.allProducts$ = data;
+  })
 }
 
 getAllProduct() {

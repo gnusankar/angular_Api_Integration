@@ -11,8 +11,8 @@
 
 <div>
 product list
- <div *ngIf="allProducts$ | async as data; else noData" style="border: 1px solid orange;" class="productLists">
-    <div *ngFor="let item of data.products" class="item">
+ <div *ngIf="allProducts$" style="border: 1px solid orange;" class="productLists">
+    <div *ngFor="let item of allProducts$" class="item">
         
         <div><img style="width: 120px; height: 120px;" [src]="item.thumbnail" /></div>
         <div>
